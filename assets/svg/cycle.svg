@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 260" role="img" aria-label="Six-step cycle">
+<title>Six-step cycle</title>
+<rect width="1100" height="260" fill="#fffdf8"/>
+<text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#1c1420">Six-step cycle</text>
+<rect x="24.0" y="52" width="163.66666666666666" height="180" rx="8" fill="#fff" stroke="#2c4a7c" stroke-width="2"/>
+<text x="36.0" y="80" font-size="13" fill="#2c4a7c" font-family="sans-serif">1  📘</text>
+<text x="36.0" y="110" font-size="16" font-weight="700" fill="#1c1420" font-family="Georgia, serif">Meaning</text>
+<text x="36.0" y="134" font-size="12" fill="#3a3040" font-family="sans-serif">Symbolic: what am</text>
+<text x="36.0" y="152" font-size="12" fill="#3a3040" font-family="sans-serif">I in language?</text>
+<text x="189.66666666666666" y="142" font-size="16" fill="#b68a3a">→</text>
+<rect x="201.66666666666666" y="52" width="163.66666666666666" height="180" rx="8" fill="#fff" stroke="#2f6a45" stroke-width="2"/>
+<text x="213.66666666666666" y="80" font-size="13" fill="#2f6a45" font-family="sans-serif">2  🪞</text>
+<text x="213.66666666666666" y="110" font-size="16" font-weight="700" fill="#1c1420" font-family="Georgia, serif">Proof</text>
+<text x="213.66666666666666" y="134" font-size="12" fill="#3a3040" font-family="sans-serif">Imaginary: confirm</text>
+<text x="213.66666666666666" y="152" font-size="12" fill="#3a3040" font-family="sans-serif">value in a gaze</text>
+<text x="367.3333333333333" y="142" font-size="16" fill="#b68a3a">→</text>
+<rect x="379.3333333333333" y="52" width="163.66666666666666" height="180" rx="8" fill="#fff" stroke="#7a2436" stroke-width="2"/>
+<text x="391.3333333333333" y="80" font-size="13" fill="#7a2436" font-family="sans-serif">3  ⚡</text>
+<text x="391.3333333333333" y="110" font-size="16" font-weight="700" fill="#1c1420" font-family="Georgia, serif">Trauma</text>
+<text x="391.3333333333333" y="134" font-size="12" fill="#3a3040" font-family="sans-serif">Real: lack, loss,</text>
+<text x="391.3333333333333" y="152" font-size="12" fill="#3a3040" font-family="sans-serif">the impossible</text>
+<text x="545.0" y="142" font-size="16" fill="#b68a3a">→</text>
+<rect x="557.0" y="52" width="163.66666666666666" height="180" rx="8" fill="#fff" stroke="#5a3d7a" stroke-width="2"/>
+<text x="569.0" y="80" font-size="13" fill="#5a3d7a" font-family="sans-serif">4  💜</text>
+<text x="569.0" y="110" font-size="16" font-weight="700" fill="#1c1420" font-family="Georgia, serif">Symptom</text>
+<text x="569.0" y="134" font-size="12" fill="#3a3040" font-family="sans-serif">A costly original</text>
+<text x="569.0" y="152" font-size="12" fill="#3a3040" font-family="sans-serif">reply</text>
+<text x="722.6666666666666" y="142" font-size="16" fill="#b68a3a">→</text>
+<rect x="734.6666666666666" y="52" width="163.66666666666666" height="180" rx="8" fill="#fff" stroke="#2a5f62" stroke-width="2"/>
+<text x="746.6666666666666" y="80" font-size="13" fill="#2a5f62" font-family="sans-serif">5  ƒ</text>
+<text x="746.6666666666666" y="110" font-size="16" font-weight="700" fill="#1c1420" font-family="Georgia, serif">Formula</text>
+<text x="746.6666666666666" y="134" font-size="12" fill="#3a3040" font-family="sans-serif">The reply becomes</text>
+<text x="746.6666666666666" y="152" font-size="12" fill="#3a3040" font-family="sans-serif">an algorithm</text>
+<text x="900.3333333333333" y="142" font-size="16" fill="#b68a3a">→</text>
+<rect x="912.3333333333333" y="52" width="163.66666666666666" height="180" rx="8" fill="#fff" stroke="#b68a3a" stroke-width="2"/>
+<text x="924.3333333333333" y="80" font-size="13" fill="#b68a3a" font-family="sans-serif">6  🪢</text>
+<text x="924.3333333333333" y="110" font-size="16" font-weight="700" fill="#1c1420" font-family="Georgia, serif">Sinthome</text>
+<text x="924.3333333333333" y="134" font-size="12" fill="#3a3040" font-family="sans-serif">A knot one can</text>
+<text x="924.3333333333333" y="152" font-size="12" fill="#3a3040" font-family="sans-serif">live</text>
+</svg>

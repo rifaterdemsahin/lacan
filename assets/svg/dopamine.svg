@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 360" role="img" aria-label="Lacan and dopamine">
+<title>Lacan and dopamine</title>
+<rect width="1100" height="360" fill="#fffdf8"/>
+
+    <text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#1c1420">Parallel, not identical</text>
+    <rect x="40" y="60" width="420" height="240" rx="8" fill="#fff" stroke="#2c4a7c" stroke-width="2"/>
+    <text x="60" y="95" font-size="18" fill="#2c4a7c"> Lacan</text>
+    <text x="60" y="130" font-size="14" font-family="sans-serif">lack · Other · objet a</text>
+    <text x="60" y="155" font-size="14" font-family="sans-serif">desire · drive · symptom</text>
+    <text x="60" y="180" font-size="14" font-family="sans-serif">🔥 jouissance (structural)</text>
+    <rect x="640" y="60" width="420" height="240" rx="8" fill="#fff" stroke="#2a5f62" stroke-width="2"/>
+    <text x="660" y="95" font-size="18" fill="#2a5f62">🧠 Dopamine system</text>
+    <text x="660" y="130" font-size="14" font-family="sans-serif">cue · craving · action</text>
+    <text x="660" y="155" font-size="14" font-family="sans-serif">dip · search again</text>
+    <text x="660" y="180" font-size="14" font-family="sans-serif">chemical motor of wanting</text>
+    <text x="500" y="190" font-size="28" fill="#7a2436" font-weight="700">≠</text>
+    <text x="40" y="330" font-size="13" fill="#3a3040" font-family="sans-serif">Dopamine can accompany desire. It is not jouissance.</text>
+    
+</svg>

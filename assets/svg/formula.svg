@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 260" role="img" aria-label="A formula is a life-algorithm">
+<title>A formula is a life-algorithm</title>
+<rect width="1100" height="260" fill="#fffdf8"/>
+<text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#1c1420">A formula is a life-algorithm</text>
+<rect x="24.0" y="52" width="252.5" height="180" rx="8" fill="#fff" stroke="#2c4a7c" stroke-width="2"/>
+<text x="36.0" y="80" font-size="13" fill="#2c4a7c" font-family="sans-serif">1  🔒</text>
+<text x="36.0" y="110" font-size="16" font-weight="700" fill="#1c1420" font-family="Georgia, serif">Obsessive</text>
+<text x="36.0" y="134" font-size="12" fill="#3a3040" font-family="sans-serif">If I control, I am</text>
+<text x="36.0" y="152" font-size="12" fill="#3a3040" font-family="sans-serif">safe</text>
+<text x="278.5" y="142" font-size="16" fill="#b68a3a">→</text>
+<rect x="290.5" y="52" width="252.5" height="180" rx="8" fill="#fff" stroke="#7a2436" stroke-width="2"/>
+<text x="302.5" y="80" font-size="13" fill="#7a2436" font-family="sans-serif">2  ❓</text>
+<text x="302.5" y="110" font-size="16" font-weight="700" fill="#1c1420" font-family="Georgia, serif">Hysteric</text>
+<text x="302.5" y="134" font-size="12" fill="#3a3040" font-family="sans-serif">If you keep</text>
+<text x="302.5" y="152" font-size="12" fill="#3a3040" font-family="sans-serif">wanting, I exist</text>
+<text x="545.0" y="142" font-size="16" fill="#b68a3a">→</text>
+<rect x="557.0" y="52" width="252.5" height="180" rx="8" fill="#fff" stroke="#2f6a45" stroke-width="2"/>
+<text x="569.0" y="80" font-size="13" fill="#2f6a45" font-family="sans-serif">3  🎭</text>
+<text x="569.0" y="110" font-size="16" font-weight="700" fill="#1c1420" font-family="Georgia, serif">Perverse</text>
+<text x="569.0" y="134" font-size="12" fill="#3a3040" font-family="sans-serif">If I run the</text>
+<text x="569.0" y="152" font-size="12" fill="#3a3040" font-family="sans-serif">scene, lack hides</text>
+<text x="811.5" y="142" font-size="16" fill="#b68a3a">→</text>
+<rect x="823.5" y="52" width="252.5" height="180" rx="8" fill="#fff" stroke="#5a3d7a" stroke-width="2"/>
+<text x="835.5" y="80" font-size="13" fill="#5a3d7a" font-family="sans-serif">4  ⚡</text>
+<text x="835.5" y="110" font-size="16" font-weight="700" fill="#1c1420" font-family="Georgia, serif">Psychotic</text>
+<text x="835.5" y="134" font-size="12" fill="#3a3040" font-family="sans-serif">My system holds</text>
+<text x="835.5" y="152" font-size="12" fill="#3a3040" font-family="sans-serif">the world</text>
+</svg>

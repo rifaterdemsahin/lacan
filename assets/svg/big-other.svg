@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 340" role="img" aria-label="Other vs other">
+<title>Other vs other</title>
+<rect width="1100" height="340" fill="#fffdf8"/>
+<text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#1c1420">Other vs other</text>
+<rect x="24.0" y="50" width="340.0" height="270" rx="8" fill="#fff" stroke="#2f6a45" stroke-width="2"/>
+<rect x="24.0" y="50" width="340.0" height="8" rx="4" fill="#2f6a45"/>
+<text x="38.0" y="90" font-size="22">🪞</text>
+<text x="38.0" y="120" font-size="16" font-weight="700" font-family="Georgia, serif" fill="#1c1420">other (imaginary)</text>
+<text x="38.0" y="150" font-size="13" fill="#3a3040" font-family="sans-serif">counterpart, rival, peer</text>
+<text x="38.0" y="172" font-size="13" fill="#3a3040" font-family="sans-serif">the image I compare</text>
+<text x="38.0" y="194" font-size="13" fill="#3a3040" font-family="sans-serif">proof lives here</text>
+<rect x="380.0" y="50" width="340.0" height="270" rx="8" fill="#fff" stroke="#2c4a7c" stroke-width="2"/>
+<rect x="380.0" y="50" width="340.0" height="8" rx="4" fill="#2c4a7c"/>
+<text x="394.0" y="90" font-size="22">👁️</text>
+<text x="394.0" y="120" font-size="16" font-weight="700" font-family="Georgia, serif" fill="#1c1420">Other (symbolic)</text>
+<text x="394.0" y="150" font-size="13" fill="#3a3040" font-family="sans-serif">law, language, A</text>
+<text x="394.0" y="172" font-size="13" fill="#3a3040" font-family="sans-serif">treasury of signifiers</text>
+<text x="394.0" y="194" font-size="13" fill="#3a3040" font-family="sans-serif">meaning lives here</text>
+<rect x="736.0" y="50" width="340.0" height="270" rx="8" fill="#fff" stroke="#b68a3a" stroke-width="2"/>
+<rect x="736.0" y="50" width="340.0" height="8" rx="4" fill="#b68a3a"/>
+<text x="750.0" y="90" font-size="22">📛</text>
+<text x="750.0" y="120" font-size="16" font-weight="700" font-family="Georgia, serif" fill="#1c1420">Name-of-the-Father</text>
+<text x="750.0" y="150" font-size="13" fill="#3a3040" font-family="sans-serif">a function, not a dad</text>
+<text x="750.0" y="172" font-size="13" fill="#3a3040" font-family="sans-serif">installs a limit</text>
+<text x="750.0" y="194" font-size="13" fill="#3a3040" font-family="sans-serif">foreclosed in psychosis</text>
+</svg>

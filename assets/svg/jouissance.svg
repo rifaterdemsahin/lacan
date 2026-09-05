@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 400" role="img" aria-label="Jouissance loop">
+<title>Jouissance loop</title>
+<rect width="1100" height="400" fill="#fffdf8"/>
+<text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#1c1420">Jouissance is a loop, not a prize</text>
+<ellipse cx="550" cy="200" rx="360" ry="130" fill="none" stroke="#b68a3a" stroke-width="2" stroke-dasharray="6 6"/>
+<rect x="80" y="200" width="160" height="54" rx="8" fill="#fff" stroke="#d8cbb6"/>
+<text x="90" y="222" font-size="13">1 👁️</text>
+<text x="90" y="242" font-size="13" fill="#3a3040" font-family="sans-serif">Other's lack</text>
+<rect x="250" y="80" width="160" height="54" rx="8" fill="#fff" stroke="#d8cbb6"/>
+<text x="260" y="102" font-size="13">2 🔁</text>
+<text x="260" y="122" font-size="13" fill="#3a3040" font-family="sans-serif">Drive</text>
+<rect x="520" y="60" width="160" height="54" rx="8" fill="#fff" stroke="#d8cbb6"/>
+<text x="530" y="82" font-size="13">3 ❤️</text>
+<text x="530" y="102" font-size="13" fill="#3a3040" font-family="sans-serif">Desire</text>
+<rect x="780" y="80" width="160" height="54" rx="8" fill="#fff" stroke="#d8cbb6"/>
+<text x="790" y="102" font-size="13">4 🔥</text>
+<text x="790" y="122" font-size="13" fill="#3a3040" font-family="sans-serif">Jouissance</text>
+<rect x="930" y="200" width="160" height="54" rx="8" fill="#fff" stroke="#d8cbb6"/>
+<text x="940" y="222" font-size="13">5 ○</text>
+<text x="940" y="242" font-size="13" fill="#3a3040" font-family="sans-serif">Lack returns</text>
+<rect x="520" y="320" width="160" height="54" rx="8" fill="#fff" stroke="#d8cbb6"/>
+<text x="530" y="342" font-size="13">6 🌀</text>
+<text x="530" y="362" font-size="13" fill="#3a3040" font-family="sans-serif">New orbit</text>
+</svg>

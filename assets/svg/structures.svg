@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 340" role="img" aria-label="Clinical structures · positions, not types">
+<title>Clinical structures · positions, not types</title>
+<rect width="1100" height="340" fill="#fffdf8"/>
+<text x="24" y="32" font-family="Georgia, serif" font-size="20" fill="#1c1420">Clinical structures · positions, not types</text>
+<rect x="24.0" y="50" width="197.6" height="270" rx="8" fill="#fff" stroke="#2c4a7c" stroke-width="2"/>
+<rect x="24.0" y="50" width="197.6" height="8" rx="4" fill="#2c4a7c"/>
+<text x="38.0" y="90" font-size="22">🔒</text>
+<text x="38.0" y="120" font-size="16" font-weight="700" font-family="Georgia, serif" fill="#1c1420">Obsessive</text>
+<text x="38.0" y="150" font-size="13" fill="#3a3040" font-family="sans-serif">Avoids Real via rules</text>
+<text x="38.0" y="172" font-size="13" fill="#3a3040" font-family="sans-serif">Proof: I do it right</text>
+<text x="38.0" y="194" font-size="13" fill="#3a3040" font-family="sans-serif">Object: control</text>
+<rect x="237.6" y="50" width="197.6" height="270" rx="8" fill="#fff" stroke="#7a2436" stroke-width="2"/>
+<rect x="237.6" y="50" width="197.6" height="8" rx="4" fill="#7a2436"/>
+<text x="251.6" y="90" font-size="22">❓</text>
+<text x="251.6" y="120" font-size="16" font-weight="700" font-family="Georgia, serif" fill="#1c1420">Hysteric</text>
+<text x="251.6" y="150" font-size="13" fill="#3a3040" font-family="sans-serif">Avoids Real via questions</text>
+<text x="251.6" y="172" font-size="13" fill="#3a3040" font-family="sans-serif">Proof: I am wanted</text>
+<text x="251.6" y="194" font-size="13" fill="#3a3040" font-family="sans-serif">Object: gaze</text>
+<rect x="451.2" y="50" width="197.6" height="270" rx="8" fill="#fff" stroke="#2f6a45" stroke-width="2"/>
+<rect x="451.2" y="50" width="197.6" height="8" rx="4" fill="#2f6a45"/>
+<text x="465.2" y="90" font-size="22">🎭</text>
+<text x="465.2" y="120" font-size="16" font-weight="700" font-family="Georgia, serif" fill="#1c1420">Perverse</text>
+<text x="465.2" y="150" font-size="13" fill="#3a3040" font-family="sans-serif">Stages Other's jouissance</text>
+<text x="465.2" y="172" font-size="13" fill="#3a3040" font-family="sans-serif">Proof: I run the scene</text>
+<text x="465.2" y="194" font-size="13" fill="#3a3040" font-family="sans-serif">Object: fetish</text>
+<rect x="664.8" y="50" width="197.6" height="270" rx="8" fill="#fff" stroke="#5a3d7a" stroke-width="2"/>
+<rect x="664.8" y="50" width="197.6" height="8" rx="4" fill="#5a3d7a"/>
+<text x="678.8" y="90" font-size="22">⚡</text>
+<text x="678.8" y="120" font-size="16" font-weight="700" font-family="Georgia, serif" fill="#1c1420">Psychotic</text>
+<text x="678.8" y="150" font-size="13" fill="#3a3040" font-family="sans-serif">Homemade Symbolic</text>
+<text x="678.8" y="172" font-size="13" fill="#3a3040" font-family="sans-serif">Proof: my world is true</text>
+<text x="678.8" y="194" font-size="13" fill="#3a3040" font-family="sans-serif">Object: stabilizer</text>
+<rect x="878.4" y="50" width="197.6" height="270" rx="8" fill="#fff" stroke="#b68a3a" stroke-width="2"/>
+<rect x="878.4" y="50" width="197.6" height="8" rx="4" fill="#b68a3a"/>
+<text x="892.4" y="90" font-size="22">⭐</text>
+<text x="892.4" y="120" font-size="16" font-weight="700" font-family="Georgia, serif" fill="#1c1420">Ethical</text>
+<text x="892.4" y="150" font-size="13" fill="#3a3040" font-family="sans-serif">Admits lack</text>
+<text x="892.4" y="172" font-size="13" fill="#3a3040" font-family="sans-serif">Loyal to own desire</text>
+<text x="892.4" y="194" font-size="13" fill="#3a3040" font-family="sans-serif">Object: sinthome</text>
+</svg>

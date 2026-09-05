@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 400" role="img" aria-label="Three registers">
+<title>Three registers</title>
+<rect width="1100" height="400" fill="#fffdf8"/>
+
+    <text x="24" y="36" font-family="Georgia, serif" font-size="22" fill="#1c1420">RSI · three registers</text>
+    <circle cx="280" cy="175" r="88" fill="none" stroke="#2f6a45" stroke-width="14"/>
+    <circle cx="360" cy="230" r="88" fill="none" stroke="#2c4a7c" stroke-width="14"/>
+    <circle cx="440" cy="175" r="88" fill="none" stroke="#7a2436" stroke-width="14"/>
+    <circle cx="800" cy="200" r="70" fill="none" stroke="#b68a3a" stroke-width="10" stroke-dasharray="8 6"/>
+    <text x="230" y="90" fill="#2f6a45" font-size="16">🟢 Imaginary</text>
+    <text x="430" y="90" fill="#7a2436" font-size="16">🔴 Real</text>
+    <text x="318" y="340" fill="#2c4a7c" font-size="16">🔵 Symbolic</text>
+    <text x="730" y="110" fill="#b68a3a" font-size="16">🪢 Sinthome</text>
+    <text x="720" y="300" font-size="13" fill="#3a3040" font-family="sans-serif">Fourth ring</text>
+    <text x="24" y="370" font-size="13" fill="#3a3040" font-family="sans-serif">Cut one ring and the knot falls. The sinthome can hold what the paternal metaphor did not.</text>
+    
+</svg>
