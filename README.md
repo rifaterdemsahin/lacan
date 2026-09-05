@@ -2,7 +2,9 @@
 
 A static site that turns a folder of Lacanian teaching charts into a readable, searchable map.
 
-Live files: open `index.html` (or GitHub Pages on this repo).
+**Live site:** [https://rifaterdemsahin.github.io/lacan/](https://rifaterdemsahin.github.io/lacan/)
+
+GitHub Pages is served from `main` `/`. Locally, open `index.html` or run the server below.
 
 ## Rationale
 
