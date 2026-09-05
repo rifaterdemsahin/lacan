@@ -270,9 +270,10 @@ def wrap(lang, title, desc, kicker, h1, lede, body):
 '''
 
 def img(src, alt, cap):
-    return f'<figure class="visual"><img src="../images/{src}" alt="{alt}"><figcaption>{cap}</figcaption></figure>'
+    return f'<figure class="visual"><img src="../images/{src}" alt="{alt}"><figcaption>📷 {cap}</figcaption></figure>'
 
 def svg(name, cap):
+    cap = cap if cap.startswith("🖼️") else f"🖼️ {cap}"
     return f'<figure class="visual"><img src="../assets/svg/{name}.svg" alt="{cap}"><figcaption>{cap}</figcaption></figure>'
 
 def flow_html(items):
@@ -280,16 +281,16 @@ def flow_html(items):
     tones = ["tone-blue","tone-green","tone-red","tone-purple","tone-teal","tone-gold"]
     for i, (emoji, title, text) in enumerate(items):
         tone = tones[i % 6]
-        out.append(f'<article class="step {tone}"><div class="n">{i+1} · {emoji}</div><h3>{title}</h3><p>{text}</p></article>')
+        label = title if title.startswith(emoji) else f"{emoji} {title}"
+        out.append(f'<article class="step {tone}"><div class="n">{i+1} · {emoji}</div><h3>{label}</h3><p>{text}</p></article>')
     out.append("</div>")
     return "\n".join(out)
 
-# Each slug: {en: (title,desc,kicker,h1,lede,body), tr: ...}
 def cards(items):
     grid = "grid-3" if len(items) >= 3 else "grid-2"
     out = [f'<div class="grid {grid}">']
     for tone, chip, h, p, href in items:
-        more = f'<a class="more" href="{href}">→</a>' if href else ""
+        more = f'<a class="more" href="{href}">👉</a>' if href else ""
         out.append(f'<article class="card {tone}"><span class="chip">{chip}</span><h3>{h}</h3><p>{p}</p>{more}</article>')
     out.append("</div>")
     return "\n".join(out)
@@ -300,50 +301,50 @@ PAGES["index.html"] = {
 "en": (
 "🏠 Lacan Concepts",
 "Visual encyclopedia of Lacanian structures, in English with SVG maps.",
-"Choose a map · SVG edition",
-"How a subject makes meaning, proves itself, meets lack, and knots a life.",
-"English pages draw the concepts in SVG. The original photo-charts live on the Turkish side. These are clinical maps, not diagnoses.",
+"🗺️ 🖼️ SVG edition",
+"🪢 How a subject makes meaning, proves itself, meets lack, and knots a life.",
+"🇬🇧 English pages draw the concepts in 🖼️ SVG. 📷 Original photo-charts live on the 🇹🇷 Turkish side. ⚠️ Clinical maps, not diagnoses.",
 flow_html([
     ("📘","Meaning","The subject asks what the world, and their own being, could mean."),
     ("🪞","Proof","They try to confirm their value in the gaze of the Other."),
     ("⚡","Trauma","Lack, loss, and the impossible show through the story."),
     ("💜","Symptom","A painful but original reply to that encounter."),
-    ("ƒ","Formula","The symptom hardens into a repeated life algorithm."),
+    ("🧮","Formula","The symptom hardens into a repeated life algorithm."),
     ("🪢","Sinthome","A singular way of living with lack, rather than fleeing it."),
-]) + svg("cycle", "SVG: the six-step cycle") +
-"<h2>🧩 Clinical structures</h2><p>Positions toward the Symbolic, the Imaginary, the Real, and the desire of the Other — not personality types.</p>" +
+]) + svg("cycle", "the six-step cycle") +
+"<h2>🧩 Clinical structures</h2><p>Positions toward the 🔵 Symbolic, the 🟢 Imaginary, the 🔴 Real, and the desire of the Other — not personality types.</p>" +
 cards([
-    ("tone-blue","🔒 Neurosis","Obsessive","Avoids the Real through rules, delay, guilt, and control.","obsessive.html"),
-    ("tone-red","❓ Neurosis","Hysteric","Avoids the Real by questioning. Proof is being wanted.","hysteric.html"),
-    ("tone-green","🎭 Perversion","Perverse","Organizes the Other’s jouissance: staging, fetish, law as a tool.","perverse.html"),
-    ("tone-purple","⚡ Psychosis","Psychotic","The Name-of-the-Father is foreclosed. Meaning is self-built.","psychotic.html"),
-    ("tone-gold","⭐ Ethic","Ethical subject","Accepts lack and stays loyal to a chosen desire.","ethical-subject.html"),
-    ("tone-teal","🪢 Knot","Sinthome","A fourth ring that holds RSI together.","sinthome.html"),
-]) + svg("structures", "SVG: five positions") +
+    ("tone-blue","🔒 Neurosis","🔒 Obsessive","Avoids the Real through rules, delay, guilt, and control.","obsessive.html"),
+    ("tone-red","❓ Neurosis","❓ Hysteric","Avoids the Real by questioning. Proof is being wanted.","hysteric.html"),
+    ("tone-green","🎭 Perversion","🎭 Perverse","Organizes the Other’s jouissance: staging, fetish, law as a tool.","perverse.html"),
+    ("tone-purple","⚡ Psychosis","⚡ Psychotic","The Name-of-the-Father is foreclosed. Meaning is self-built.","psychotic.html"),
+    ("tone-gold","⭐ Ethic","⭐ Ethical subject","Accepts lack and stays loyal to a chosen desire.","ethical-subject.html"),
+    ("tone-teal","🪢 Knot","🪢 Sinthome","A fourth ring that holds RSI together.","sinthome.html"),
+]) + svg("structures", "five positions") +
 '<p class="note">⚠️ Teaching tools, not diagnostic labels. Each subject is singular.</p>'
 ),
 "tr": (
 "🏠 Lacan Kavramları",
 "Lacancı yapıların görsel ansiklopedisi — orijinal çizelgelerle.",
-"Harita seç · çizelge baskısı",
-"Özne nasıl anlam üretir, kendini ispatlar, eksikle karşılaşır ve bir yaşam düğümler.",
-"Türkçe sayfalar orijinal öğretim çizelgelerini gösterir. İngilizce tarafta aynı kavramlar SVG ile çizilir. Klinik harita, tanı değil.",
+"🗺️ 📷 çizelge baskısı",
+"🪢 Özne nasıl anlam üretir, kendini ispatlar, eksikle karşılaşır ve bir yaşam düğümler.",
+"🇹🇷 Türkçe sayfalar orijinal öğretim çizelgelerini gösterir. 🇬🇧 İngilizce tarafta aynı kavramlar 🖼️ SVG ile çizilir. ⚠️ Klinik harita, tanı değil.",
 flow_html([
     ("📘","Anlam","Özne dünyanın ve kendi varlığının ne anlama geldiğini sorar."),
     ("🪞","İspat","Değerini Öteki'nin bakışında doğrulamaya çalışır."),
     ("⚡","Travma","Eksiklik, kayıp ve imkânsız hikâyeden sızar."),
     ("💜","Semptom","Bu karşılaşmaya acılı ama özgün bir yanıttır."),
-    ("ƒ","Formül","Semptom tekrar eden bir yaşam algoritmasına sertleşir."),
+    ("🧮","Formül","Semptom tekrar eden bir yaşam algoritmasına sertleşir."),
     ("🪢","Sinthome","Eksiklikten kaçmadan onunla yaşamanın tekil yolu."),
 ]) + img("01-cycle-overview-all-structures.jpg", "Tüm yapılarda anlam-ispat-travma-semptom-formül-sinthome tablosu", "Ana çizelge: her yapı, her adım. 24 Temmuz 2026 tarihli WhatsApp dışa aktarımı, yeniden adlandırıldı.") +
-"<h2>🧩 Klinik yapılar</h2><p>Simgesel, İmgesel, Gerçek ve Öteki'nin arzusu karşısında konumlar — kişilik tipleri değil.</p>" +
+"<h2>🧩 Klinik yapılar</h2><p>🔵 Simgesel, 🟢 İmgesel, 🔴 Gerçek ve Öteki'nin arzusu karşısında konumlar — kişilik tipleri değil.</p>" +
 cards([
-    ("tone-blue","🔒 Nevroz","Obsesif","Gerçek'ten kural, erteleme, suçluluk ve kontrol ile kaçar.","obsessive.html"),
-    ("tone-red","❓ Nevroz","Histerik","Gerçek'ten soru sorarak kaçar. İspat: isteniyor olmak.","hysteric.html"),
-    ("tone-green","🎭 Sapkınlık","Sapkın","Öteki'nin jouissance'ını sahne, fetiş ve yasa aleti ile düzenler.","perverse.html"),
-    ("tone-purple","⚡ Psikoz","Psikotik","Baba-Adı forklüze edilmiştir. Anlam evde kurulur.","psychotic.html"),
-    ("tone-gold","⭐ Etik","Etik özne","Eksikliği kabul eder; seçtiği arzuya sadık kalır.","ethical-subject.html"),
-    ("tone-teal","🪢 Düğüm","Sinthome","RSI'yi tutan dördüncü halka.","sinthome.html"),
+    ("tone-blue","🔒 Nevroz","🔒 Obsesif","Gerçek'ten kural, erteleme, suçluluk ve kontrol ile kaçar.","obsessive.html"),
+    ("tone-red","❓ Nevroz","❓ Histerik","Gerçek'ten soru sorarak kaçar. İspat: isteniyor olmak.","hysteric.html"),
+    ("tone-green","🎭 Sapkınlık","🎭 Sapkın","Öteki'nin jouissance'ını sahne, fetiş ve yasa aleti ile düzenler.","perverse.html"),
+    ("tone-purple","⚡ Psikoz","⚡ Psikotik","Baba-Adı forklüze edilmiştir. Anlam evde kurulur.","psychotic.html"),
+    ("tone-gold","⭐ Etik","⭐ Etik özne","Eksikliği kabul eder; seçtiği arzuya sadık kalır.","ethical-subject.html"),
+    ("tone-teal","🪢 Düğüm","🪢 Sinthome","RSI'yi tutan dördüncü halka.","sinthome.html"),
 ]) +
 '<p class="note">⚠️ Öğretim aracı, tanı etiketi değil. Her özne tekildir.</p>'
 )
@@ -352,47 +353,47 @@ cards([
 PAGES["cycle.html"] = {
 "en": (
 "🔄 Six-step cycle", "Meaning, proof, trauma, symptom, formula, sinthome.",
-"Anlam · İspat · Travma · Semptom · Formül · Sinthome",
-"The six-step cycle",
-"Every map in this archive is a variation on one sequence. English pages draw it in SVG.",
-flow_html([("📘","Meaning","Symbolic. Who am I?"),("🪞","Proof","Imaginary. Confirm I count."),("⚡","Trauma","Real. Lack shows through."),("💜","Symptom","A costly reply."),("ƒ","Formula","A repeated strategy."),("🪢","Sinthome","A livable knot.")])
+"📘🪞⚡💜🧮🪢 Anlam · İspat · Travma · Semptom · Formül · Sinthome",
+"🔄 The six-step cycle",
+"🗺️ Every map in this archive is a variation on one sequence. 🇬🇧 English pages draw it in 🖼️ SVG.",
+flow_html([("📘","Meaning","Symbolic. Who am I?"),("🪞","Proof","Imaginary. Confirm I count."),("⚡","Trauma","Real. Lack shows through."),("💜","Symptom","A costly reply."),("🧮","Formula","A repeated strategy."),("🪢","Sinthome","A livable knot.")])
 + svg("cycle", "SVG map of the cycle")
 + "<h2>📘 1. Meaning</h2><p>The subject is thrown into language. Meaning is borrowed from the Other’s store of signifiers. If meaning must be complete, ambiguity panics the subject. The ethical move is to leave a place for the unknown.</p>"
 + "<h2>🪞 2. Proof</h2><p>Proof is the demand to be seen. Gaze, comparison, performance. A trap if it depends only on the Other’s stamp.</p>"
 + "<h2>⚡ 3. Trauma</h2><p>Not only an event: the encounter with lack. What does not fit the story. Structures differ by how they meet it.</p>"
 + "<h2>💜 4. Symptom</h2><p>Already a solution — a costly one. How jouissance is bound. A message and a mode of enjoyment.</p>"
-+ "<h2>ƒ 5. Formula</h2><p>The symptom becomes an algorithm: if I control / if I keep asking / if I stage the scene. Frozen, it cages; living, it can be revised.</p>"
++ "<h2>🧮 5. Formula</h2><p>The symptom becomes an algorithm: if I control / if I keep asking / if I stage the scene. Frozen, it cages; living, it can be revised.</p>"
 + "<h2>🪢 6. Sinthome</h2><p>Not the absence of a symptom. The symptom reworked as a knot: a practice that holds Imaginary, Symbolic, and Real together.</p>"
 ),
 "tr": (
 "🔄 Altı adımlı döngü", "Anlam, ispat, travma, semptom, formül, sinthome.",
-"Anlam · İspat · Travma · Semptom · Formül · Sinthome",
-"Altı adımlı döngü",
-"Arşivdeki her çizelge aynı dizinin bir çeşitlemesidir. Türkçe sayfa orijinal tabloyu gösterir.",
-flow_html([("📘","Anlam","Simgesel. Ben kimim?"),("🪞","İspat","İmgesel. Sayılıyor muyum?"),("⚡","Travma","Gerçek. Eksik sızar."),("💜","Semptom","Pahalı bir yanıt."),("ƒ","Formül","Tekrar eden strateji."),("🪢","Sinthome","Yaşanabilir düğüm.")])
+"📘🪞⚡💜🧮🪢 Anlam · İspat · Travma · Semptom · Formül · Sinthome",
+"🔄 Altı adımlı döngü",
+"🗺️ Arşivdeki her çizelge aynı dizinin bir çeşitlemesidir. 🇹🇷 Türkçe sayfa orijinal tabloyu gösterir.",
+flow_html([("📘","Anlam","Simgesel. Ben kimim?"),("🪞","İspat","İmgesel. Sayılıyor muyum?"),("⚡","Travma","Gerçek. Eksik sızar."),("💜","Semptom","Pahalı bir yanıt."),("🧮","Formül","Tekrar eden strateji."),("🪢","Sinthome","Yaşanabilir düğüm.")])
 + img("01-cycle-overview-all-structures.jpg", "Altı adımlı döngünün tüm yapılar üzerindeki ana tablosu", "Ana tablo: her yapının sorunu, çözümü ve çözülmezse ne olduğu.")
 + "<h2>📘 1. Anlam</h2><p>Özne dile atılır. Anlam, Öteki'nin gösteren deposundan ödünç alınır. Anlam tam olmak zorundaysa belirsizlik panik üretir. Etik hamle, bilinmeyene yer bırakmaktır.</p>"
 + "<h2>🪞 2. İspat</h2><p>İspat, görülme talebidir. Bakış, kıyas, performans. Yalnızca Öteki'nin damgasına bağlıysa tuzaktır.</p>"
 + "<h2>⚡ 3. Travma</h2><p>Yalnızca bir olay değil: eksiklikle karşılaşma. Hikâyeye sığmayan. Yapılar bunu karşılama biçimleriyle ayrılır.</p>"
 + "<h2>💜 4. Semptom</h2><p>Zaten bir çözümdür — pahalı bir çözüm. Jouissance'ın bağlanma biçimi. Hem mesaj hem keyif kipi.</p>"
-+ "<h2>ƒ 5. Formül</h2><p>Semptom algoritma olur: kontrol edersem / sormaya devam edersem / sahneyi kurarsam. Donarsa kafes; yaşarsa mevsimlik olabilir.</p>"
++ "<h2>🧮 5. Formül</h2><p>Semptom algoritma olur: kontrol edersem / sormaya devam edersem / sahneyi kurarsam. Donarsa kafes; yaşarsa mevsimlik olabilir.</p>"
 + "<h2>🪢 6. Sinthome</h2><p>Semptomun yokluğu değil. Semptomun düğüm olarak yeniden işlenmesi: İmgesel, Simgesel ve Gerçek'i tutan bir pratik.</p>"
 )
 }
 
 PAGES["three-registers.html"] = {
-"en": ("🟣 Three registers", "Imaginary, Symbolic, Real.", "RSI · Borromean knot",
-"Imaginary, Symbolic, Real",
-"Not layers of a mind: three ways experience is ordered. Meaning is Symbolic, proof Imaginary, trauma Real. The sinthome can be a fourth ring.",
+"en": ("🟣 Three registers", "Imaginary, Symbolic, Real.", "🪢 RSI · Borromean knot",
+"🟣 Imaginary, Symbolic, Real",
+"Not layers of a mind: three ways experience is ordered. 📘 Meaning is 🔵 Symbolic, 🪞 proof 🟢 Imaginary, ⚡ trauma 🔴 Real. The 🪢 sinthome can be a fourth ring.",
 svg("rsi", "SVG: three rings and a fourth")
 + "<h2>🟢 Imaginary</h2><p>Images, identification, the ego, the gaze, rivalry. Where the subject looks for proof.</p>"
 + "<h2>🔵 Symbolic</h2><p>Language, law, kinship, the Name-of-the-Father, the Big Other. Where the subject looks for meaning.</p>"
 + "<h2>🔴 Real</h2><p>What will not be imaged or said. Lack, jouissance, leftover. Where the cycle meets the impossible.</p>"
 + "<p>A Borromean knot: cut one ring and all three fall. Psychosis is a failure of the Symbolic knot. A sinthome can restitch what the paternal metaphor did not hold.</p>"
 ),
-"tr": ("🟣 Üç düzen", "İmgesel, Simgesel, Gerçek.", "RSI · Borromean düğüm",
-"İmgesel, Simgesel, Gerçek",
-"Zihnin katmanları değil: deneyimin düzenlendiği üç yol. Anlam Simgesel, ispat İmgesel, travma Gerçek. Sinthome dördüncü halka olabilir.",
+"tr": ("🟣 Üç düzen", "İmgesel, Simgesel, Gerçek.", "🪢 RSI · Borromean düğüm",
+"🟣 İmgesel, Simgesel, Gerçek",
+"Zihnin katmanları değil: deneyimin düzenlendiği üç yol. 📘 Anlam 🔵 Simgesel, 🪞 ispat 🟢 İmgesel, ⚡ travma 🔴 Gerçek. 🪢 Sinthome dördüncü halka olabilir.",
 img("16-trauma-meaning-proof-symptom-tr.jpg", "Travma anlam ispat semptom sürecinin Türkçe tablosu", "Süreç tablosu RSI'yi sütunlara yazar: Gerçek → Simgesel → İmgesel → jouissance.")
 + "<h2>🟢 İmgesel</h2><p>İmgeler, özdeşleşme, ego, bakış, rekabet. Öznenin ispat aradığı yer.</p>"
 + "<h2>🔵 Simgesel</h2><p>Dil, yasa, akrabalık, Baba-Adı, Büyük Öteki. Anlamın arandığı yer.</p>"
@@ -410,8 +411,8 @@ def pair(en_t, tr_t, en_body, tr_body, en_svg, tr_imgs, extra_en="", extra_tr=""
     }
 
 PAGES["structures.html"] = pair(
-    ("🧩 Clinical structures", "Four structures plus the ethical subject.", "Position, not personality", "Clinical structures", "Obsession and hysteria are neuroses. Perversion is another relation to the law. Psychosis is another relation to the Symbolic. The fifth row is an ethic of desire."),
-    ("🧩 Klinik yapılar", "Dört yapı ve etik özne.", "Konum, kişilik değil", "Klinik yapılar", "Obsesyon ve histeri nevroza aittir. Sapkınlık yasayla başka bir ilişkidir. Psikoz Simgesel'le başka bir ilişkidir. Beşinci satır arzu etiğidir."),
+    ("🧩 Clinical structures", "Four structures plus the ethical subject.", "🧭 Position, not personality", "🧩 Clinical structures", "🔒 Obsession and ❓ hysteria are neuroses. 🎭 Perversion is another relation to the law. ⚡ Psychosis is another relation to the Symbolic. The fifth row is an ⭐ ethic of desire."),
+    ("🧩 Klinik yapılar", "Dört yapı ve etik özne.", "🧭 Konum, kişilik değil", "🧩 Klinik yapılar", "🔒 Obsesyon ve ❓ histeri nevroza aittir. 🎭 Sapkınlık yasayla başka bir ilişkidir. ⚡ Psikoz Simgesel'le başka bir ilişkidir. Beşinci satır ⭐ arzu etiğidir."),
     "<p>The UML idea: subjectivation is an interface every structure must implement.</p>",
     "<p>UML fikri: özneleşme, her yapının gerçekleştirmek zorunda olduğu bir arayüzdür.</p>",
     "structures",
@@ -419,8 +420,8 @@ PAGES["structures.html"] = pair(
 )
 
 PAGES["obsessive.html"] = pair(
-    ("🔒 Obsessive", "Rules, delay, guilt, control.", "Neurosis · control", "The obsessive subject", "Meets the Big Other as comply-or-be-wrong. Safety is sought in rules, thought, and postponement."),
-    ("🔒 Obsesif", "Kural, erteleme, suçluluk, kontrol.", "Nevroz · kontrol", "Obsesif özne", "Büyük Öteki'yi uy-ya da-yanlış-ol olarak karşılar. Güvenlik kural, düşünce ve ertelemede aranır."),
+    ("🔒 Obsessive", "Rules, delay, guilt, control.", "🔒 Neurosis · control", "🔒 The obsessive subject", "Meets the Big Other as comply-or-be-wrong. Safety is sought in 📋 rules, 🧠 thought, and ⏳ postponement."),
+    ("🔒 Obsesif", "Kural, erteleme, suçluluk, kontrol.", "🔒 Nevroz · kontrol", "🔒 Obsesif özne", "Büyük Öteki'yi uy-ya da-yanlış-ol olarak karşılar. Güvenlik 📋 kural, 🧠 düşünce ve ⏳ ertelemede aranır."),
     "<p>Meaning from rules. Proof as competence. Trauma as loss of control. Symptom as ritual and rumination.</p>" + svg("obsessive", "SVG: obsessive position"),
     "<p>Anlam kurallardan. İspat yetkinlik. Travma kontrol kaybı. Semptom ritüel ve ruminasyon.</p>",
     "formula",
@@ -429,8 +430,8 @@ PAGES["obsessive.html"] = pair(
 )
 
 PAGES["hysteric.html"] = pair(
-    ("❓ Hysteric", "The question to the Other's desire.", "Neurosis · Che vuoi?", "The hysteric subject", "Organized around: what do you want? What am I for you? Desire stays alive by not closing the answer."),
-    ("❓ Histerik", "Öteki'nin arzusuna soru.", "Nevroz · Che vuoi?", "Histerik özne", "Ne istiyorsun? Senin için neyim? Cevabı kapatmamak arzuyu canlı tutar."),
+    ("❓ Hysteric", "The question to the Other's desire.", "❓ Neurosis · Che vuoi?", "❓ The hysteric subject", "Organized around: what do you want? What am I for you? 💫 Desire stays alive by not closing the answer."),
+    ("❓ Histerik", "Öteki'nin arzusuna soru.", "❓ Nevroz · Che vuoi?", "❓ Histerik özne", "Ne istiyorsun? Senin için neyim? Cevabı kapatmamak 💫 arzuyu canlı tutar."),
     "<p>Not a theatrical personality. Being is referred to the Other’s desire. The gaze object is typical.</p>" + svg("hysteric", "SVG: hysteric position"),
     "<p>Tiyatro kişiliği değil. Varlık Öteki'nin arzusuna gönderilir. Tipik nesne bakış nesnesidir.</p>",
     "hysteric",
@@ -439,8 +440,8 @@ PAGES["hysteric.html"] = pair(
 )
 
 PAGES["perverse.html"] = pair(
-    ("🎭 Perverse", "Staging, fetish, disavowal.", "Disavowal · scene", "The perverse subject", "Not a moral insult: a position that disavows lack and tries to be the instrument of the Other's jouissance."),
-    ("🎭 Sapkın", "Sahne, fetiş, yadsıma.", "Yadsıma · sahne", "Sapkın özne", "Ahlaki hakaret değil: eksikliği yadsıyan ve Öteki'nin jouissance'ının aleti olmaya çalışan bir konum."),
+    ("🎭 Perverse", "Staging, fetish, disavowal.", "🎭 Disavowal · scene", "🎭 The perverse subject", "Not a moral insult: a position that disavows lack and tries to be the instrument of the Other's 🔥 jouissance."),
+    ("🎭 Sapkın", "Sahne, fetiş, yadsıma.", "🎭 Yadsıma · sahne", "🎭 Sapkın özne", "Ahlaki hakaret değil: eksikliği yadsıyan ve Öteki'nin 🔥 jouissance'ının aleti olmaya çalışan bir konum."),
     "<p>Freud’s fetishist knows very well, but even so. The fetish plugs castration. The ethical turn keeps the gifts — scene-making, intensity — without turning people into props.</p>" + svg("perverse", "SVG: perverse position"),
     "<p>Freud'un fetişisti pekâlâ bilir, yine de. Fetiş hadım edilmeyi tıkar. Etik dönüş, sahne kurma yeteneğini insanları aksesuar etmeden kullanır.</p>",
     "perverse",
@@ -449,8 +450,8 @@ PAGES["perverse.html"] = pair(
 )
 
 PAGES["psychotic.html"] = pair(
-    ("⚡ Psychotic", "Foreclosure of the Name-of-the-Father.", "Foreclosure · homemade Symbolic", "The psychotic subject", "Not more neurosis: a different knot. What neurosis represses, psychosis may meet as invasion."),
-    ("⚡ Psikotik", "Baba-Adı'nın forklüzyonu.", "Forklüzyon · ev yapımı Simgesel", "Psikotik özne", "Daha fazla nevroz değil: başka bir düğüm. Nevrozun bastırdığını psikoz istila olarak karşılayabilir."),
+    ("⚡ Psychotic", "Foreclosure of the Name-of-the-Father.", "⚡ Foreclosure · homemade Symbolic", "⚡ The psychotic subject", "Not more neurosis: a different 🪢 knot. What neurosis represses, psychosis may meet as invasion."),
+    ("⚡ Psikotik", "Baba-Adı'nın forklüzyonu.", "⚡ Forklüzyon · ev yapımı Simgesel", "⚡ Psikotik özne", "Daha fazla nevroz değil: başka bir 🪢 düğüm. Nevrozun bastırdığını psikoz istila olarak karşılayabilir."),
     "<p>A private order (delusion, system) is already an attempt to stabilize the Real. Late Lacan reads Joyce’s writing as a sinthome. Help find a knot — music, craft, rhythm — rather than only tearing the private order down.</p>" + svg("psychotic", "SVG: psychotic position"),
     "<p>Özel bir düzen (hezeyan, sistem) Gerçek'i sabitleme çabasıdır. Geç Lacan Joyce'un yazısını sinthome olarak okur. Yalnızca özel düzeni yıkmak yerine bir düğüm — müzik, zanaat, ritim — bulunmasına yardım.</p>",
     "psychotic",
@@ -459,8 +460,8 @@ PAGES["psychotic.html"] = pair(
 )
 
 PAGES["ethical-subject.html"] = pair(
-    ("⭐ Ethical subject", "Loyalty to a chosen desire.", "Sinthomatic subject", "The ethical subject", "Not a fifth pathology. Accept lack, stop using the Other as a guarantee, take responsibility for unconscious desire."),
-    ("⭐ Etik özne", "Seçilmiş arzuya sadakat.", "Sinthomatik özne", "Etik özne", "Beşinci bir patoloji değil. Eksikliği kabul et, Öteki'yi garanti olarak kullanmayı bırak, bilinçdışı arzunun sorumluluğunu al."),
+    ("⭐ Ethical subject", "Loyalty to a chosen desire.", "⭐ Sinthomatic subject", "⭐ The ethical subject", "Not a fifth pathology. Accept lack, stop using the Other as a guarantee, take responsibility for 💫 unconscious desire."),
+    ("⭐ Etik özne", "Seçilmiş arzuya sadakat.", "⭐ Sinthomatik özne", "⭐ Etik özne", "Beşinci bir patoloji değil. Eksikliği kabul et, Öteki'yi garanti olarak kullanmayı bırak, 💫 bilinçdışı arzunun sorumluluğunu al."),
     "<p>Not moralism. An ethic of desire: I will not outsource my being, nor cover lack by making someone else into a scene, nor freeze life into a perfect rule.</p>" + svg("ethical", "SVG: ethical / sinthomatic subject"),
     "<p>Ahlakçılık değil. Arzu etiği: varlığımı dışarıya ihale etmem; eksikliği başkasını sahne ederek örtmem; hayatı mükemmel kurala dondurmam.</p>",
     "ethical",
@@ -469,8 +470,8 @@ PAGES["ethical-subject.html"] = pair(
 )
 
 PAGES["sinthome.html"] = pair(
-    ("🪢 Sinthome", "Fourth ring, Seminar XXIII.", "Fourth ring", "Sinthome", "Lacan respells symptôme as sinthome: not a coded message to delete, but a singular know-how that knots a life."),
-    ("🪢 Sinthome", "Dördüncü halka, Seminer XXIII.", "Dördüncü halka", "Sinthome", "Lacan symptôme'u sinthome diye yeniden heceler: silinecek şifreli mesaj değil, yaşamı düğümleyen tekil bir know-how."),
+    ("🪢 Sinthome", "Fourth ring, Seminar XXIII.", "🪢 Fourth ring · Seminar XXIII", "🪢 Sinthome", "Lacan respells symptôme as sinthome: not a coded message to delete, but a singular know-how that knots a life."),
+    ("🪢 Sinthome", "Dördüncü halka, Seminer XXIII.", "🪢 Dördüncü halka · Seminer XXIII", "🪢 Sinthome", "Lacan symptôme'u sinthome diye yeniden heceler: silinecek şifreli mesaj değil, yaşamı düğümleyen tekil bir know-how."),
     "<p>Joyce is the literary case. The charts translate that into ordinary clinic: a practice that holds RSI. A knot is a practice, not a trophy — if unfed it becomes a tired duty.</p>" + svg("sinthome", "SVG: symptom vs sinthome") + svg("rsi", "SVG: fourth ring around RSI"),
     "<p>Joyce edebi örnektir. Çizelgeler bunu sıradan kliniğe çevirir: RSI'yi tutan bir pratik. Düğüm kupa değil pratiktir — beslenmezse yorgun bir vazife olur.</p>",
     "sinthome",
@@ -478,8 +479,8 @@ PAGES["sinthome.html"] = pair(
 )
 
 PAGES["objet-petit-a.html"] = pair(
-    ("🎯 Objet petit a", "Object-cause of desire.", "Leftover that makes us want", "Objet petit a", "Not an object we have: the leftover that makes us want. Gaze, voice, a scene, a nothing that glows."),
-    ("🎯 Objet petit a", "Arzunun nesne-nedeni.", "İstememizi sağlayan artık", "Objet petit a", "Sahip olduğumuz nesne değil: istememizi sağlayan artık. Bakış, ses, bir sahne, parlayan bir hiç."),
+    ("🎯 Objet petit a", "Object-cause of desire.", "✨ Leftover that makes us want", "🎯 Objet petit a", "Not an object we have: the leftover that makes us want. 👀 Gaze, 🎙️ voice, 🎭 a scene, a nothing that glows."),
+    ("🎯 Objet petit a", "Arzunun nesne-nedeni.", "✨ İstememizi sağlayan artık", "🎯 Objet petit a", "Sahip olduğumuz nesne değil: istememizi sağlayan artık. 👀 Bakış, 🎙️ ses, 🎭 bir sahne, parlayan bir hiç."),
     "<p>After trauma, anxiety rises. Binding to an object is already a small solution. It can freeze as symptom or be reworked as sinthome.</p>" + svg("objet-a", "SVG: five typical objects"),
     "<p>Travmadan sonra kaygı yükselir. Bir nesneye bağlanmak zaten küçük bir çözümdür. Semptomda donabilir veya sinthome olarak işlenebilir.</p>",
     "objet-a",
@@ -488,8 +489,8 @@ PAGES["objet-petit-a.html"] = pair(
 )
 
 PAGES["object-attachment.html"] = pair(
-    ("🧲 Object attachment", "Which object, why, at which step.", "Clinic of objet petit a", "How structures bind to objects", "Not a shopping list of hobbies: a logic of anxiety."),
-    ("🧲 Nesne bağlanması", "Hangi nesne, neden, hangi adımda.", "Objet petit a kliniği", "Yapılar nesnelere nasıl bağlanır", "Hobi listesi değil: kaygının mantığı."),
+    ("🧲 Object attachment", "Which object, why, at which step.", "🩺 Clinic of objet petit a", "🧲 How structures bind to objects", "Not a shopping list of hobbies: a logic of 😰 anxiety."),
+    ("🧲 Nesne bağlanması", "Hangi nesne, neden, hangi adımda.", "🩺 Objet petit a kliniği", "🧲 Yapılar nesnelere nasıl bağlanır", "Hobi listesi değil: 😰 kaygının mantığı."),
     flow_html([("⚡","Trauma","Lack / jouissance"),("😰","Anxiety","Pressure"),("💜","Symptom","Defense"),("🧲","Bind","Object regulates"),("🪢","Fork","Freeze or knot")])
     + svg("attachment", "SVG: trauma to object"),
     flow_html([("⚡","Travma","Eksik / jouissance"),("😰","Kaygı","Basınç"),("💜","Semptom","Savunma"),("🧲","Bağ","Nesne düzenler"),("🪢","Çatal","Donma veya düğüm")]),
@@ -499,8 +500,8 @@ PAGES["object-attachment.html"] = pair(
 )
 
 PAGES["parental-attachment.html"] = pair(
-    ("👨‍👩‍👧 Parental attachment", "Parents as first Big Other.", "The first Other", "Over-attachment to parental figures", "Parents often occupy the place of law, love, gaze — the one who seems to know."),
-    ("👨‍👩‍👧 Ebeveyn bağlanması", "Ebeveynler ilk Büyük Öteki.", "İlk Öteki", "Ebeveyn figürlerine aşırı bağlanma", "Ebeveynler sık sık yasa, sevgi, bakış yerini — bilen yeri — tutar."),
+    ("👨‍👩‍👧 Parental attachment", "Parents as first Big Other.", "👁️ The first Other", "👨‍👩‍👧 Over-attachment to parental figures", "Parents often occupy the place of ⚖️ law, ❤️ love, 👀 gaze — the one who seems to know."),
+    ("👨‍👩‍👧 Ebeveyn bağlanması", "Ebeveynler ilk Büyük Öteki.", "👁️ İlk Öteki", "👨‍👩‍👧 Ebeveyn figürlerine aşırı bağlanma", "Ebeveynler sık sık ⚖️ yasa, ❤️ sevgi, 👀 bakış yerini — bilen yeri — tutar."),
     svg("parental", "SVG: how each structure uses the parent"),
     "<p>Sevgi, onay, aidiyet talebi çocukça değildir. Ebeveyn anlamın, ispatın ve sakinliğin tek garantisi kaldığında donar.</p>",
     "parental",
@@ -508,18 +509,18 @@ PAGES["parental-attachment.html"] = pair(
 )
 
 PAGES["jouissance.html"] = pair(
-    ("🔥 Jouissance", "Beyond the pleasure principle.", "Surplus enjoyment", "Jouissance", "Not happiness. Surplus enjoyment: pleasure pushed past the limit, mixed with pain. What the symptom secretly serves."),
-    ("🔥 Jouissance", "Haz ilkesinin ötesi.", "Fazla tatmin", "Jouissance", "Mutluluk değil. Fazla tatmin: hazzın sınırın ötesine itilmesi, acıyla karışması. Semptomun gizlice hizmet ettiği şey."),
-    flow_html([("👁️","Other's lack","Something missing in the Other — and in me"),("🔁","Drive","Circles the hole"),("❤️","Desire","The circling is read as a wish"),("🔥","Jouissance","The circling itself produces surplus"),("○","Lack returns","It does not seal the hole"),("🌀","New desire","Another orbit")])
+    ("🔥 Jouissance", "Beyond the pleasure principle.", "🔥 Surplus enjoyment", "🔥 Jouissance", "Not 😊 happiness. Surplus enjoyment: pleasure pushed past the limit, mixed with pain. What the 💜 symptom secretly serves."),
+    ("🔥 Jouissance", "Haz ilkesinin ötesi.", "🔥 Fazla tatmin", "🔥 Jouissance", "😊 Mutluluk değil. Fazla tatmin: hazzın sınırın ötesine itilmesi, acıyla karışması. 💜 Semptomun gizlice hizmet ettiği şey."),
+    flow_html([("👁️","Other's lack","Something missing in the Other — and in me"),("🔁","Drive","Circles the hole"),("❤️","Desire","The circling is read as a wish"),("🔥","Jouissance","The circling itself produces surplus"),("⭕","Lack returns","It does not seal the hole"),("🌀","New desire","Another orbit")])
     + svg("jouissance", "SVG: jouissance as a loop") + svg("desire-drive", "SVG: drive, desire, jouissance"),
-    flow_html([("👁️","Öteki'nin eksiği","Öteki'nde — ve bende — bir şey yok"),("🔁","Dürtü","Deliğin etrafında döner"),("❤️","Arzu","Dönüş bir dilek olarak okunur"),("🔥","Jouissance","Dönüşün kendisi fazlalık üretir"),("○","Eksik döner","Deliği kapatmaz"),("🌀","Yeni arzu","Yeni yörünge")]),
+    flow_html([("👁️","Öteki'nin eksiği","Öteki'nde — ve bende — bir şey yok"),("🔁","Dürtü","Deliğin etrafında döner"),("❤️","Arzu","Dönüş bir dilek olarak okunur"),("🔥","Jouissance","Dönüşün kendisi fazlalık üretir"),("⭕","Eksik döner","Deliği kapatmaz"),("🌀","Yeni arzu","Yeni yörünge")]),
     "jouissance",
     [img("21-jouissance-drive-desire.jpg", "Jouissance süreci ve dürtü-arzu-jouissance karşılaştırması", "Döngü ve karşılaştırma tablosu.")],
 )
 
 PAGES["desire-and-drive.html"] = pair(
-    ("💫 Desire and drive", "Désir, Trieb, manque.", "Not a need, not an instinct", "Desire and drive", "Need can be satisfied. Demand is spoken to the Other. Desire is what is left. Drive is the repetitive push around a hole."),
-    ("💫 Arzu ve dürtü", "Désir, Trieb, manque.", "İhtiyaç değil, içgüdü değil", "Arzu ve dürtü", "İhtiyaç doyurulabilir. Talep Öteki'ye söylenir. Arzu artandır. Dürtü deliğin etrafındaki tekrarlı itkidir."),
+    ("💫 Desire and drive", "Désir, Trieb, manque.", "💫 Not a need, not an instinct", "💫 Desire and drive", "Need can be satisfied. Demand is spoken to the Other. 💫 Desire is what is left. 🔁 Drive is the repetitive push around a hole."),
+    ("💫 Arzu ve dürtü", "Désir, Trieb, manque.", "💫 İhtiyaç değil, içgüdü değil", "💫 Arzu ve dürtü", "İhtiyaç doyurulabilir. Talep Öteki'ye söylenir. 💫 Arzu artandır. 🔁 Dürtü deliğin etrafındaki tekrarlı itkidir."),
     "<p>Desire is the desire of the Other: I want to be wanted, and my want is formatted by the Other’s signifiers. Drive does not arrive; satisfaction is in the circuit. That is why “just stop” is not a theory of change.</p>" + svg("desire-drive", "SVG: three terms"),
     "<p>Arzu Öteki'nin arzusudur: istenmek isterim ve isteğim Öteki'nin gösterenleriyle biçimlenir. Dürtü varmaz; tatmin devrededir. Bu yüzden “sadece bırak” bir değişim kuramı değildir.</p>",
     "desire-drive",
@@ -527,8 +528,8 @@ PAGES["desire-and-drive.html"] = pair(
 )
 
 PAGES["big-other.html"] = pair(
-    ("👁️ The Big Other", "Grand Autre, Name-of-the-Father.", "A, not a person", "The Big Other", "Not a person. The place of language, law, and presumed knowledge. We are spoken before we speak."),
-    ("👁️ Büyük Öteki", "Grand Autre, Baba-Adı.", "A, bir kişi değil", "Büyük Öteki", "Bir kişi değil. Dil, yasa ve varsayılan bilginin yeri. Konuşmadan önce konuşuluruz."),
+    ("👁️ The Big Other", "Grand Autre, Name-of-the-Father.", "👁️ A, not a person", "👁️ The Big Other", "Not a person. The place of 🗣️ language, ⚖️ law, and presumed knowledge. We are spoken before we speak."),
+    ("👁️ Büyük Öteki", "Grand Autre, Baba-Adı.", "👁️ A, bir kişi değil", "👁️ Büyük Öteki", "Bir kişi değil. 🗣️ Dil, ⚖️ yasa ve varsayılan bilginin yeri. Konuşmadan önce konuşuluruz."),
     svg("big-other", "SVG: other / Other / Name-of-the-Father"),
     "<p>Küçük öteki imgesel karşıktır. Büyük Öteki simgesel yasadır. Baba-Adı bir işlevdir, baba değil.</p>",
     "big-other",
@@ -537,8 +538,8 @@ PAGES["big-other.html"] = pair(
 )
 
 PAGES["formula.html"] = pair(
-    ("ƒ Formula", "Life strategy, f(x).", "Symptom as algorithm", "The formula", "Step five: the subject no longer only suffers a reply; they live by it."),
-    ("ƒ Formül", "Yaşam stratejisi, f(x).", "Algoritma olarak semptom", "Formül", "Beşinci adım: özne yanıtı yalnızca çekmez; onunla yaşar."),
+    ("🧮 Formula", "Life strategy, f(x).", "🧮 Symptom as algorithm", "🧮 The formula", "Step five: the subject no longer only suffers a reply; they live by it."),
+    ("🧮 Formül", "Yaşam stratejisi, f(x).", "🧮 Algoritma olarak semptom", "🧮 Formül", "Beşinci adım: özne yanıtı yalnızca çekmez; onunla yaşar."),
     svg("formula", "SVG: four typical formulas"),
     "<p>Donmuş formül esnekliği öldürür. Terapi formülü silmek değil; onu mevsimlik, paylaşılır ve bir arzuya sadık kılmaktır.</p>",
     "formula",
@@ -546,8 +547,8 @@ PAGES["formula.html"] = pair(
 )
 
 PAGES["dopamine.html"] = pair(
-    ("🧠 Lacan and dopamine", "Parallel, not identical.", "Jouissance ≠ dopamine", "Lacan and dopamine", "Dopamine may accompany wanting. Jouissance is structural enjoyment knotted through lack, the Other, and repetition."),
-    ("🧠 Lacan ve dopamin", "Paralel, özdeş değil.", "Jouissance ≠ dopamin", "Lacan ve dopamin", "Dopamin istemeye eşlik edebilir. Jouissance, eksiklik, Öteki ve tekrar üzerinden düğümlenen yapısal bir keyiftir."),
+    ("🧠 Lacan and dopamine", "Parallel, not identical.", "⚠️ Jouissance ≠ dopamine", "🧠 Lacan and dopamine", "Dopamine may accompany wanting. 🔥 Jouissance is structural enjoyment knotted through lack, the Other, and repetition."),
+    ("🧠 Lacan ve dopamin", "Paralel, özdeş değil.", "⚠️ Jouissance ≠ dopamin", "🧠 Lacan ve dopamin", "Dopamin istemeye eşlik edebilir. 🔥 Jouissance, eksiklik, Öteki ve tekrar üzerinden düğümlenen yapısal bir keyiftir."),
     svg("dopamine", "SVG: two languages, one subject, not one substance"),
     "<p>Çizelgenin uyarısı tezdir: jouissance dopamin değildir. Obsesif erteleme, histerik tanınma arayışı, sapkın sahne, psikotik kesinlik — hepsinde jouissance vardır ve hiçbiri tek bir ileticiye inmez.</p>",
     "dopamine",
@@ -555,8 +556,8 @@ PAGES["dopamine.html"] = pair(
 )
 
 PAGES["uml-model.html"] = pair(
-    ("📐 UML model", "Interface, class, realization.", "Software-style map", "A software-style map of the same clinic", "Subjectivation is an interface. Obsessive, hysteric, perverse, psychotic are classes that realize it in different code. English pages draw that in SVG, not photographs."),
-    ("📐 UML modeli", "Arayüz, sınıf, gerçekleştirme.", "Yazılım tarzı harita", "Aynı kliniğin yazılım tarzı haritası", "Özneleşme bir arayüzdür. Obsesif, histerik, sapkın, psikotik bunu farklı kodda gerçekleştiren sınıflardır."),
+    ("📐 UML model", "Interface, class, realization.", "💻 Software-style map", "📐 A software-style map of the same clinic", "Subjectivation is an interface. 🔒 Obsessive, ❓ hysteric, 🎭 perverse, ⚡ psychotic are classes that realize it in different code. 🇬🇧 English pages draw that in 🖼️ SVG, not photographs."),
+    ("📐 UML modeli", "Arayüz, sınıf, gerçekleştirme.", "💻 Yazılım tarzı harita", "📐 Aynı kliniğin yazılım tarzı haritası", "Özneleşme bir arayüzdür. 🔒 Obsesif, ❓ histerik, 🎭 sapkın, ⚡ psikotik bunu farklı kodda gerçekleştiren sınıflardır."),
     svg("uml", "SVG: shared interface, four realizations") + svg("cycle", "SVG: the process those classes implement"),
     "<p>Ağustos çizimleri aynı fikri üç taslakta netleştirir. Öğretim diyagramıdır; ruhun Java programı olduğu iddiası değil.</p>",
     "uml",
@@ -568,38 +569,38 @@ PAGES["uml-model.html"] = pair(
 )
 
 GLOSS_ROWS = [
-    ("Anlam / Meaning", "Symbolic work of making world and I readable.", "Dünyayı ve ben'i okunur kılan Simgesel iş."),
-    ("İspat / Proof", "Imaginary work of confirming value.", "Değeri doğrulayan İmgesel iş."),
-    ("Travma / Trauma", "Encounter with the Real.", "Gerçek'le karşılaşma."),
-    ("Semptom / Symptom", "Costly reply that binds jouissance.", "Jouissance'ı bağlayan pahalı yanıt."),
-    ("Formül / Formula", "Symptom as life-algorithm.", "Yaşam algoritması olarak semptom."),
-    ("Sinthome", "Singular knot; livable style.", "Tekil düğüm; yaşanabilir üslup."),
-    ("Imaginary / İmgesel", "Images, ego, gaze.", "İmge, ego, bakış."),
-    ("Symbolic / Simgesel", "Language, law, Other.", "Dil, yasa, Öteki."),
-    ("Real / Gerçek", "What will not go into signifier.", "Gösterene girmeyen."),
-    ("Big Other / Büyük Öteki", "Place of law and speech.", "Yasa ve sözün yeri."),
-    ("Name-of-the-Father / Baba-Adı", "Signifier that installs a limit.", "Sınır koyan gösteren."),
-    ("Objet petit a", "Object-cause of desire.", "Arzunun nesne-nedeni."),
-    ("Desire / Arzu", "Want structured by the Other's want.", "Öteki'nin isteğiyle biçimlenen istek."),
-    ("Drive / Dürtü", "Repeating push around a hole.", "Deliğin etrafındaki tekrarlı itki."),
-    ("Jouissance", "Surplus enjoyment mixed with pain.", "Acıyla karışık fazla tatmin."),
-    ("Manque / Lack", "Structural missingness.", "Yapısal eksiklik."),
-    ("Foreclosure / Forklüzyon", "Signifier never inscribed.", "Hiç yazılmamış gösteren."),
-    ("Disavowal / Yadsıma", "I know, but even so.", "Biliyorum, yine de."),
+    ("📘 Anlam / Meaning", "Symbolic work of making world and I readable.", "Dünyayı ve ben'i okunur kılan Simgesel iş."),
+    ("🪞 İspat / Proof", "Imaginary work of confirming value.", "Değeri doğrulayan İmgesel iş."),
+    ("⚡ Travma / Trauma", "Encounter with the Real.", "Gerçek'le karşılaşma."),
+    ("💜 Semptom / Symptom", "Costly reply that binds jouissance.", "Jouissance'ı bağlayan pahalı yanıt."),
+    ("🧮 Formül / Formula", "Symptom as life-algorithm.", "Yaşam algoritması olarak semptom."),
+    ("🪢 Sinthome", "Singular knot; livable style.", "Tekil düğüm; yaşanabilir üslup."),
+    ("🟢 Imaginary / İmgesel", "Images, ego, gaze.", "İmge, ego, bakış."),
+    ("🔵 Symbolic / Simgesel", "Language, law, Other.", "Dil, yasa, Öteki."),
+    ("🔴 Real / Gerçek", "What will not go into signifier.", "Gösterene girmeyen."),
+    ("👁️ Big Other / Büyük Öteki", "Place of law and speech.", "Yasa ve sözün yeri."),
+    ("📛 Name-of-the-Father / Baba-Adı", "Signifier that installs a limit.", "Sınır koyan gösteren."),
+    ("🎯 Objet petit a", "Object-cause of desire.", "Arzunun nesne-nedeni."),
+    ("💫 Desire / Arzu", "Want structured by the Other's want.", "Öteki'nin isteğiyle biçimlenen istek."),
+    ("🔁 Drive / Dürtü", "Repeating push around a hole.", "Deliğin etrafındaki tekrarlı itki."),
+    ("🔥 Jouissance", "Surplus enjoyment mixed with pain.", "Acıyla karışık fazla tatmin."),
+    ("⭕ Manque / Lack", "Structural missingness.", "Yapısal eksiklik."),
+    ("⚡ Foreclosure / Forklüzyon", "Signifier never inscribed.", "Hiç yazılmamış gösteren."),
+    ("🎭 Disavowal / Yadsıma", "I know, but even so.", "Biliyorum, yine de."),
 ]
-gloss_en = "<div class='table-wrap'><table><thead><tr><th>Term</th><th>On these pages</th></tr></thead><tbody>" + "".join(
+gloss_en = "<div class='table-wrap'><table><thead><tr><th>📚 Term</th><th>On these pages</th></tr></thead><tbody>" + "".join(
     f"<tr><td><strong>{a}</strong></td><td>{b}</td></tr>" for a,b,_ in GLOSS_ROWS) + "</tbody></table></div>"
-gloss_tr = "<div class='table-wrap'><table><thead><tr><th>Terim</th><th>Bu sayfalarda</th></tr></thead><tbody>" + "".join(
+gloss_tr = "<div class='table-wrap'><table><thead><tr><th>📚 Terim</th><th>Bu sayfalarda</th></tr></thead><tbody>" + "".join(
     f"<tr><td><strong>{a}</strong></td><td>{c}</td></tr>" for a,_,c in GLOSS_ROWS) + "</tbody></table></div>"
 
 PAGES["glossary.html"] = {
-"en": ("📚 Glossary", "Working dictionary.", "Terms", "Glossary", "As used on these maps.", gloss_en),
-"tr": ("📚 Sözlük", "Çalışma sözlüğü.", "Terimler", "Sözlük", "Bu haritalarda kullanıldığı biçimiyle.", gloss_tr),
+"en": ("📚 Glossary", "Working dictionary.", "📚 Terms", "📚 Glossary", "As used on these maps.", gloss_en),
+"tr": ("📚 Sözlük", "Çalışma sözlüğü.", "📚 Terimler", "📚 Sözlük", "Bu haritalarda kullanıldığı biçimiyle.", gloss_tr),
 }
 
 PAGES["about.html"] = {
-"en": ("ℹ️ About", "Rationale and language split.", "Why two editions", "About and rationale",
-"The repository began as WhatsApp exports. This site names them, explains them, and splits the reading: photographs in Turkish, SVG in English.",
+"en": ("ℹ️ About", "Rationale and language split.", "🌐 Why two editions", "ℹ️ About and rationale",
+"The repository began as WhatsApp exports. This site names them, explains them, and splits the reading: 📷 photographs in 🇹🇷 Turkish, 🖼️ SVG in 🇬🇧 English.",
 "<ol>"
 "<li>🇹🇷 <strong>Turkish edition</strong> keeps the original teaching charts — they are the primary text.</li>"
 "<li>🇬🇧 <strong>English edition</strong> redraws the same logic as SVG so the concepts are readable without requiring the Turkish infographic.</li>"
@@ -609,8 +610,8 @@ PAGES["about.html"] = {
 "<p>Charts: <strong>Kaya Şahin — Lacancı Psikanaliz</strong>. Favicon: three-register knot.</p>"
 + svg("rsi", "SVG mark used across the English edition")
 ),
-"tr": ("ℹ️ Hakkında", "Gerekçe ve dil ayrımı.", "Neden iki baskı", "Hakkında ve gerekçe",
-"Depo WhatsApp dışa aktarımlarıyla başladı. Bu site onları adlandırır, açıklar ve okumayı ayırır: fotoğraflar Türkçe tarafta, SVG İngilizce tarafta.",
+"tr": ("ℹ️ Hakkında", "Gerekçe ve dil ayrımı.", "🌐 Neden iki baskı", "ℹ️ Hakkında ve gerekçe",
+"Depo WhatsApp dışa aktarımlarıyla başladı. Bu site onları adlandırır, açıklar ve okumayı ayırır: 📷 fotoğraflar 🇹🇷 Türkçe tarafta, 🖼️ SVG 🇬🇧 İngilizce tarafta.",
 "<ol>"
 "<li>🇹🇷 <strong>Türkçe baskı</strong> orijinal öğretim çizelgelerini tutar — asıl metin onlardır.</li>"
 "<li>🇬🇧 <strong>İngilizce baskı</strong> aynı mantığı SVG olarak çizer; Türkçe infografiğe ihtiyaç duymadan kavram okunur.</li>"
@@ -647,23 +648,23 @@ gate = '''<!DOCTYPE html>
     <div class="gate-inner">
       <div class="gate-brand">
         <div class="mark">🪢 LACAN</div>
-        <h1>Concepts · Kavramlar</h1>
-        <p class="lede" style="margin:0.4rem auto 0;text-align:center">Two editions of the same clinic. Pick a language.</p>
+        <h1>🪢 Concepts · Kavramlar</h1>
+        <p class="lede" style="margin:0.4rem auto 0;text-align:center">🌐 Two editions of the same clinic. Pick a language.</p>
       </div>
       <div class="lang-choice">
         <a class="lang-card" href="tr/index.html">
           <span class="flag">🇹🇷</span>
-          <h2>Türkçe</h2>
-          <p>Orijinal öğretim çizelgeleri — fotoğraf olarak. Anlam, ispat, travma, semptom, formül, sinthome.</p>
+          <h2>📷 Türkçe</h2>
+          <p>Orijinal öğretim çizelgeleri — fotoğraf olarak. 📘 Anlam · 🪞 İspat · ⚡ Travma · 💜 Semptom · 🧮 Formül · 🪢 Sinthome.</p>
         </a>
         <a class="lang-card" href="en/index.html">
           <span class="flag">🇬🇧</span>
-          <h2>English</h2>
-          <p>Same concepts drawn as SVG diagrams — no photo-charts. Search and menu still on top.</p>
+          <h2>🖼️ English</h2>
+          <p>Same concepts drawn as SVG diagrams — no photo-charts. 🔍 Search and ☰ menu still on top.</p>
         </a>
       </div>
       <p style="text-align:center;margin-top:1.4rem;color:var(--ink-soft);font-size:0.88rem">
-        🔍 Search is on every inner page · ⚠️ maps, not diagnoses · Kaya Şahin
+        🔍 Search is on every inner page · ⚠️ maps, not diagnoses · 📎 Kaya Şahin
       </p>
     </div>
   </main>

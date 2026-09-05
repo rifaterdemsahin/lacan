@@ -1,26 +1,26 @@
 const UI = {
   en: {
     home: "🏠 Home",
-    search: "Search concepts…",
-    searchEmpty: (q) => `No pages match “${q}”.`,
-    menu: "Menu",
-    brandSub: "Concepts",
-    footerBlurb: "Bilingual reading site. English pages use SVG maps; Turkish pages keep the original charts. Clinical maps, not diagnoses. Press / to search.",
-    start: "Start here",
-    source: "Source",
-    sourceLine: "Charts: Kaya Şahin, Lacancı Psikanaliz.",
+    search: "🔍 Search concepts…",
+    searchEmpty: (q) => `😕 No pages match “${q}”.`,
+    menu: "☰ Menu",
+    brandSub: "🪢 Concepts",
+    footerBlurb: "🌐 Bilingual site. 🇬🇧 English = 🖼️ SVG maps · 🇹🇷 Turkish = 📷 original charts. ⚠️ Clinical maps, not diagnoses. Press / to search.",
+    start: "🚀 Start here",
+    source: "📎 Source",
+    sourceLine: "📷 Charts: Kaya Şahin, Lacancı Psikanaliz.",
     groups: { Concepts: "📖 Concepts", Structures: "🧩 Structures", Clinic: "🩺 Clinic", Maps: "🗺️ Maps" }
   },
   tr: {
     home: "🏠 Ana sayfa",
-    search: "Kavram ara…",
-    searchEmpty: (q) => `“${q}” ile eşleşen sayfa yok.`,
-    menu: "Menü",
-    brandSub: "Kavramlar",
-    footerBlurb: "İki dilli okuma sitesi. Türkçe sayfalar orijinal çizelgeleri kullanır; İngilizce sayfalar kavramları SVG ile gösterir. Klinik harita, tanı değil. Aramak için /.",
-    start: "Buradan başla",
-    source: "Kaynak",
-    sourceLine: "Çizelgeler: Kaya Şahin, Lacancı Psikanaliz.",
+    search: "🔍 Kavram ara…",
+    searchEmpty: (q) => `😕 “${q}” ile eşleşen sayfa yok.`,
+    menu: "☰ Menü",
+    brandSub: "🪢 Kavramlar",
+    footerBlurb: "🌐 İki dilli site. 🇹🇷 Türkçe = orijinal çizelgeler · 🇬🇧 İngilizce = SVG. ⚠️ Klinik harita, tanı değil. Aramak için /.",
+    start: "🚀 Buradan başla",
+    source: "📎 Kaynak",
+    sourceLine: "📷 Çizelgeler: Kaya Şahin, Lacancı Psikanaliz.",
     groups: { Concepts: "📖 Kavramlar", Structures: "🧩 Yapılar", Clinic: "🩺 Klinik", Maps: "🗺️ Haritalar" }
   }
 };
@@ -55,8 +55,8 @@ const PAGE_META = {
     tr: { title: "👁️ Büyük Öteki", excerpt: "Dil, yasa ve Öteki'nin arzusunun yeri.", keywords: "buyuk oteki nom du pere yasa dil" }
   },
   "formula.html": {
-    en: { title: "ƒ Formula", excerpt: "The personal algorithm that repeats a symptom as a way of living.", keywords: "formula life strategy repetition" },
-    tr: { title: "ƒ Formül", excerpt: "Semptomu bir yaşam algoritmasına çeviren kişisel strateji.", keywords: "formul yasam stratejisi tekrar" }
+    en: { title: "🧮 Formula", excerpt: "The personal algorithm that repeats a symptom as a way of living.", keywords: "formula life strategy repetition" },
+    tr: { title: "🧮 Formül", excerpt: "Semptomu bir yaşam algoritmasına çeviren kişisel strateji.", keywords: "formul yasam stratejisi tekrar" }
   },
   "sinthome.html": {
     en: { title: "🪢 Sinthome", excerpt: "A singular knot that lets the subject live with lack instead of fleeing it.", keywords: "sinthome joyce fourth ring knot" },

@@ -1,6 +1,6 @@
-# Lacan Concepts · Kavramlar
+# 🪢 Lacan Concepts · Kavramlar
 
-Two editions of the same clinic:
+🌐 Two editions of the same clinic:
 
 - 🇹🇷 **Türkçe (çizelgeler):** [https://rifaterdemsahin.github.io/lacan/tr/](https://rifaterdemsahin.github.io/lacan/tr/)
 - 🇬🇧 **English (SVG):** [https://rifaterdemsahin.github.io/lacan/en/](https://rifaterdemsahin.github.io/lacan/en/)
